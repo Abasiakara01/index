@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abasiakara | Web Developer Portfolio</title>
+  <style>
+    /* ====== COLOR VARIABLES ====== */
+    :root {
+      --primary-purple: #7F3FBF;
+      --deep-violet: #4B0082;
+      --lavender: #C8A2C8;
+      --off-white: #F9F6FF;
+      --charcoal: #2E2E2E;
+    }
+
+    /* ====== GLOBAL STYLES ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--off-white);
+      color: var(--charcoal);
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      color: var(--deep-violet);
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ====== NAVBAR ====== */
+    nav {
+      background: var(--primary-purple);
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: var(--off-white);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--lavender);
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-purple), var(--deep-violet));
+      color: var(--off-white);
+      padding: 120px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--lavender);
+      color: var(--charcoal);
+      padding: 10px 25px;
+      border-radius: 30px;
+      margin-top: 30px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--off-white);
+    }
+
+    /* ====== ABOUT ====== */
+    .about img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid var(--lavender);
+    }
+
+    /* ====== WORK ====== */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .project {
+      background: var(--lavender);
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* ====== TESTIMONIALS ====== */
+    .testimonials {
+      background: var(--lavender);
+    }
+
+    .testimonial {
+      max-width: 600px;
+      margin: 20px auto;
+      background: var(--off-white);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* ====== CONTACT ====== */
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid var(--lavender);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 12px;
+      background: var(--primary-purple);
+      color: var(--off-white);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: var(--deep-violet);
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background: var(--charcoal);
+      color: var(--off-white);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(270deg, var(--primary-purple), var(--deep-violet), var(--lavender));
+      background-size: 600% 600%;
+      z-index: 0;
+      opacity: 0.2;
+      animation: gradientShift 12s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    footer p {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      nav {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ====== HERO SECTION ====== -->
+  <section id="hero" class="hero">
+    <h1>Hi, I'm Abasiakara 👋</h1>
+    <p>A passionate Front-End Web Developer crafting beautiful and functional websites.</p>
+    <a href="#work" class="btn">View My Work</a>
+  </section>
+
+  <!-- ====== ABOUT SECTION ====== -->
+  <section id="about" class="about">
+    <img src="./images/abas.png" alt="Abasiakara photo" />
+    <h2>About Me</h2>
+    <p>
+      I'm a self-taught web developer who loves creating responsive, user-friendly, and visually appealing websites. My main tools are HTML, CSS, and JavaScript — and I enjoy turning creative ideas into clean, functional code.
+    </p>
+  </section>
+
+  <!-- ====== WORK SECTION ====== -->
+  <section id="work" class="work">
+    <h2>My Projects</h2>
+    <div class="work-grid">
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>A sleek, modern portfolio to showcase my skills and projects.</p>
+      </div>
+      <div class="project">
+        <h3>Responsive Landing Page</h3>
+        <p>A responsive layout using CSS Grid and Flexbox.</p>
+      </div>
+      <div class="project">
+        <h3>JavaScript Game</h3>
+        <p>A fun browser-based game built with pure JavaScript.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section id="testimonials" class="testimonials">
+    <h2>What People Say</h2>
+    <div class="testimonial">
+      <p>"Abasiakara is a talented developer who brings ideas to life with clean code and creative design!"</p>
+      <strong>- Client A</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Working with him was a great experience — professional, punctual, and full of innovative solutions."</p>
+      <strong>- Client B</strong>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT SECTION ====== -->
+  <section id="contact" class="contact">
+    <h2>Get In Touch</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="animated-bg"></div>
+    <p>© 2025 Abasiakara | Built with ❤️ using HTML, CSS & JS</p>
+  </footer>
+
+  <script>
+    // ====== SIMPLE FORM HANDLER ======
+    function submitForm(e) {
+      e.preventDefault();
+      alert("Thank you for reaching out! I'll get back to you soon.");
+      e.target.reset();
+    }
+
+    // ====== OPTIONAL COLOR ANIMATION JS ======
+    const footerBg = document.querySelector('.animated-bg');
+    const colors = ['#7F3FBF', '#4B0082', '#C8A2C8', '#7F3FBF'];
+    let colorIndex = 0;
+
+    setInterval(() => {
+      footerBg.style.background = `linear-gradient(270deg, ${colors[colorIndex]}, ${colors[(colorIndex + 1) % colors.length]})`;
+      colorIndex = (colorIndex + 1) % colors.length;
+    }, 1000);
+  </script>
+</body>
+</html>
